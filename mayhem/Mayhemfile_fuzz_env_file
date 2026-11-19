@@ -1,0 +1,11 @@
+project: savantenvs/nccl
+target: fuzz_env_file
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_env_file/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_env_file
+    libfuzzer: true
+    timeout: 10
